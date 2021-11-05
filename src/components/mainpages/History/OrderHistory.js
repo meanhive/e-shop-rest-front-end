@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { GlobalState } from '../../../GlobalState';
 import { Link } from 'react-router-dom'
-import config from '../../config'
+import config from '../../config.json'
 
 export default function OrderHistory() {
 	const state = useContext(GlobalState);
