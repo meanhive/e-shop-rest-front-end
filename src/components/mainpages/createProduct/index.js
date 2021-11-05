@@ -3,7 +3,7 @@ import axios from 'axios'
 import { GlobalState } from '../../../GlobalState';
 import './createProduct.css';
 import { toast } from 'react-toastify';
-import config from '../../config'
+import config from '../../config.json'
 
 const LoadingSpinner = () => {
     return (
