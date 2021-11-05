@@ -3,6 +3,7 @@ import { GlobalState } from '../../GlobalState';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import config from '../../config'
 
 
 export default function Header() {
@@ -15,7 +16,7 @@ export default function Header() {
     const [userName] = state.userAPI.userName;
 
     const logoutUser = async () => {
-        await axios.get('/user/logout');
+        await axios.get(`${config.api}/user/logout`);
         localStorage.clear();
         setIsAdmin(false);
         setIsLogged(false);
