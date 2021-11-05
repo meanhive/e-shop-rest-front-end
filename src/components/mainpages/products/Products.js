@@ -25,7 +25,7 @@ export default function Products() {
                                 {
                                     products.map((product, key) => {
                                         return (
-                                            <div className="col-md-3" key={key}>
+                                            <div className="col-md-4" key={key}>
                                                 <ProductItem  product={product} isAdmin={isAdmin} addCart={addCart} />
                                             </div>
                                         )
