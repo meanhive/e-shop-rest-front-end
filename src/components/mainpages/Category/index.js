@@ -2,6 +2,7 @@ import React, { useState,useContext } from 'react'
 import { toast } from 'react-toastify';
 import axios from 'axios';
 import {GlobalState} from '../../../GlobalState';
+import config from '../../config'
 
 export default function Category() {
     const state = useContext(GlobalState);
@@ -17,7 +18,7 @@ export default function Category() {
         try {
 
            if(onEdit) {
-                const res = await axios.put(`/api/category/${id}`, { name: category }, {
+                const res = await axios.put(`${config.api}/api/category/${id}`, { name: category }, {
                     headers: { Authorization: token }
                 });
                 
@@ -26,7 +27,7 @@ export default function Category() {
 
            } else {
 
-                const res = await axios.post('/api/category', { name: category }, {
+                const res = await axios.post(`${config.api}/api/category`, { name: category }, {
                     headers: { Authorization: token }
                 });
                 
@@ -59,7 +60,7 @@ export default function Category() {
         try {
             const status = window.confirm("Are you sure to delete category?");
                 if(status) {
-                    const res1 = await axios.delete(`/api/category/${id}`, {
+                    const res1 = await axios.delete(`${config.api}/api/category/${id}`, {
                         headers: { Authorization: token }
                     })
         
