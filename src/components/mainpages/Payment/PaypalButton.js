@@ -1,6 +1,6 @@
 import React from 'react';
 import PaypalExpressBtn from 'react-paypal-express-checkout';
-import config from '../../config.json'
+import config from '../../../config.json'
  
 export default class PaypalButton extends React.Component {
     render() {
