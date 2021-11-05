@@ -3,7 +3,7 @@ import ProductAPI from './API/ProductAPI';
 import UserAPI from './API/UserAPI';
 import CategoryAPI from './API/CategoryAPI';
 import axios from 'axios';
-import config from './config'
+import config from './config.json'
 
 export const GlobalState = createContext();
 
