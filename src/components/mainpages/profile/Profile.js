@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useState,useEffect, useContext } from 'react';
 import { toast } from 'react-toastify';
 import { GlobalState } from '../../../GlobalState';
+import config from '../../config'
 
 
 export default function Profile(props) {
@@ -14,7 +15,7 @@ export default function Profile(props) {
         const getUser = async () => {
             try {
                 /* get user auth token from api */
-                const res = await axios.get('/user/infor', {
+                const res = await axios.get(`${config.api}/user/infor`, {
                     headers: { Authorization: token }
                 });
 
