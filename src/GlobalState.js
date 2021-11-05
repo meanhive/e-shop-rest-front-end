@@ -29,10 +29,10 @@ export const DataProvider = ({ children }) => {
        
     }, []);
 
-    ProductsAPI();
+    ProductAPI();
     const state = {
         token: [token, setToken],
-        productAPI: ProductsAPI(),
+        productAPI: ProductAPI(),
         userAPI: UserAPI(token),
         categoryAPI: CategoryAPI()
     }
