@@ -2,7 +2,7 @@ import React, { useState,useContext,useEffect } from 'react'
 import {  Link } from 'react-router-dom'
 import { GlobalState } from '../../../GlobalState'
 import ProductItem from '../util/ProductItem';
-import config from '../../config'
+import config from '../../config.json'
 
 export default function Details(props) {
     const id = props.match.params.id;
