@@ -4,7 +4,7 @@ import { GlobalState } from '../../../GlobalState';
 import axios from 'axios'; 
 import PayPalButton from '../Payment/PaypalButton';
 import { toast } from 'react-toastify';
-import config from '../../config'
+import config from '../../config.json'
 
 export default function Cart() {
     const state = useContext(GlobalState);
