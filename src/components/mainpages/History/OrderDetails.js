@@ -1,7 +1,7 @@
 import React, { useState,useContext,useEffect } from 'react'
 import { useParams } from 'react-router';
 import { GlobalState } from '../../../GlobalState'
-import config from '../../config'
+import config from '../../config.json'
 
 export default function OrderDetails(props) {
     const state = useContext(GlobalState);
