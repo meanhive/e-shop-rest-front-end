@@ -1,12 +1,26 @@
-import React from "react";
-import "./style.css";
+import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import Header from './components/headers/Header';
+import Pages from './components/mainpages/Pages';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
-export default function App() {
-  return (
-    <div>
-      <h1>Hello StackBlitz!</h1>
-      <p>Start editing to see some magic happen :)</p>
-    </div>
-  );
+function App() {
+
+    return (
+      <Router>
+          <div className="App">
+            <Header/>
+            <ToastContainer
+            position="top-right"
+            autoClose={2000}
+            />
+            <Pages/>
+          </div>
+      </Router>
+    );
+
 }
+
+export default App;
