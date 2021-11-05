@@ -4,6 +4,7 @@ import { GlobalState } from '../../../GlobalState';
 import axios from 'axios'; 
 import PayPalButton from '../Payment/PaypalButton';
 import { toast } from 'react-toastify';
+import config from '../../config'
 
 export default function Cart() {
     const state = useContext(GlobalState);
@@ -32,7 +33,7 @@ export default function Cart() {
   
     /* cart update logic */
     const updateCart = async (cart) => {
-        await axios.patch("/user/addCart", {cart}, {
+        await axios.patch(`${config.api}/user/addCart`, {cart}, {
             headers: { Authorization: token }
         });
     }
@@ -78,7 +79,7 @@ export default function Cart() {
        // console.log('payment =', payment);
         const { paymentID, address, paid } = payment;
 
-        await axios.post('/api/payment', {cart,paymentID,address,paid}, {
+        await axios.post(`${config.api}/api/payment`, {cart,paymentID,address,paid}, {
             headers: { Authorization: token }
         });
  
