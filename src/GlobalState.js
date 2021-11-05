@@ -3,6 +3,7 @@ import ProductsAPI from './api/ProductsAPI';
 import UserAPI from './api/UserAPI';
 import CategoryAPI from './api/CategoryAPI';
 import axios from 'axios';
+import config from './config'
 
 export const GlobalState = createContext();
 
@@ -14,7 +15,7 @@ export const DataProvider = ({ children }) => {
     useEffect(()=> {
         if(localStorage.getItem('firstLogin')) {
             const refreshToken = async () => {
-                const res = await axios.get('/user/refresh_token');
+                const res = await axios.get(`${config.api}/user/refresh_token`);
                  console.log(res);
                 setToken(res.data.accessToken);
         
