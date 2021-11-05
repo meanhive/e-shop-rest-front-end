@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useState,useEffect, useContext } from 'react';
 import { toast } from 'react-toastify';
 import { GlobalState } from '../../../GlobalState';
-import config from '../../config'
+import config from '../../config.json'
 
 
 export default function Profile(props) {
