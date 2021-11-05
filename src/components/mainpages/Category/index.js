@@ -2,7 +2,8 @@ import React, { useState,useContext } from 'react'
 import { toast } from 'react-toastify';
 import axios from 'axios';
 import {GlobalState} from '../../../GlobalState';
-import config from '../../config'
+import config from '../../config.json'
+
 
 export default function Category() {
     const state = useContext(GlobalState);
