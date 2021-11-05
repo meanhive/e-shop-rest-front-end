@@ -1,0 +1,49 @@
+.upload {
+    position: relative;
+    width: 100%;
+    height: 450px;
+}
+
+#file_up {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    outline:none;
+}
+
+#file_up::before {
+    content: "+";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left:0;
+    background-color: #ccc;
+    color:rgb(250, 200, 108);
+    font-size: 17rem;
+    text-align: center;
+    margin: auto;
+}
+
+#file_img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    left:0;
+    background-color: #fff;
+}
+
+#file_img img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+#file_img span {
+    position: absolute;
+    top:-0px;
+    right:0px;
+    cursor: pointer;
+    font-size: 1.2em;
+}
