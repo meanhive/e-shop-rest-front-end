@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import { toast } from 'react-toastify';
+import config from '../../config'
 
 export default function Register() {
     // const [location, setLocation] = useState({});
@@ -28,7 +29,7 @@ export default function Register() {
     const submitHandler = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('/user/register', {...user});
+            await axios.post(`${config.api}/user/register`, {...user});
             toast.success("User register success");
             localStorage.setItem("firstLogin", true);
             window.location.href = "/";
