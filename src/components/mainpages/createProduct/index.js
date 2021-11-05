@@ -3,7 +3,7 @@ import axios from 'axios'
 import { GlobalState } from '../../../GlobalState';
 import './createProduct.css';
 import { toast } from 'react-toastify';
-
+import config from '../../config'
 
 const LoadingSpinner = () => {
     return (
@@ -55,7 +55,7 @@ export default function CreateProduct(props) {
                 formData.append('file', file);
 
                 setLoading(true);
-                const res = await axios.post('/api/upload', formData, {
+                const res = await axios.post(`${config.api}/api/upload`, formData, {
                     headers: {
                         'content-type': 'multipart/form-data',
                         Authorization: token
@@ -76,7 +76,7 @@ export default function CreateProduct(props) {
 
             if(!isAdmin) return toast.error("You are not an Admin");
             setLoading(true);
-            await axios.post('/api/destroy', { public_id: images.public_id }, {
+            await axios.post(`${config.api}/api/destroy`, { public_id: images.public_id }, {
                 headers: { Authorization: token }
             });
             setImages(false);
@@ -99,7 +99,7 @@ export default function CreateProduct(props) {
             if(!isAdmin) return toast.error("You are not an Admin");
             if(!images) return toast.warning("No Image Uploaded");
 
-            const res = await axios.post('/api/products', {...product, images}, {
+            const res = await axios.post(`${config.api}/api/products`, {...product, images}, {
                 headers: { Authorization: token }
             });
 
