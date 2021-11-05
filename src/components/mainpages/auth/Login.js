@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import config from '../../config'
 
 export default function Login() {
     const [user, setUser] = useState({
@@ -16,7 +17,7 @@ export default function Login() {
     const submitHandler = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('/user/login', {...user});
+            await axios.post(`${config.api}/user/login`, {...user});
             toast.success("Login Successful");
             localStorage.setItem("firstLogin", true);
             window.location.href = "/";
